@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Link, Outlet, createRootRoute } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { Toaster } from "sonner";
 import { Toaster as RToaster } from "react-hot-toast";
 
@@ -20,19 +19,21 @@ function RootComponent() {
   }, [darkMode]);
 
   return (
-    <div className={`min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 ${darkMode ? 'dark' : ''}`}>
-      <button
-        onClick={() => setDarkMode(!darkMode)}
-        className="fixed top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700"
-      >
-        {darkMode ? '🌞' : '🌙'}
-      </button>
-      <Toaster />
-      <RToaster />
-      <div className=" flex items-center justify-center h-screen ">
-        <Outlet />
-      </div>
-      <TanStackRouterDevtools position='bottom-right' />
-    </div>
+    <>
+      <div className={`min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 ${darkMode ? 'dark' : ''}`}>
+
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="fixed top-4 left-4 z-50 p-2 bg-gray-200 rounded-full dark:bg-gray-700"
+        >
+          {darkMode ? '🌞' : '🌙'}
+        </button>
+        <Toaster position='top-right' />
+        <RToaster position='top-left' toastOptions={{ duration: 2000 }} />
+        <div className="pt-16">
+          <Outlet />
+        </div>
+      </div >
+    </>
   );
 }

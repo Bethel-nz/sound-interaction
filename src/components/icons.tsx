@@ -33,3 +33,10 @@ export const CloseIcon: React.FC<IconProps> = ({ className = "size-5" }) => (
 		<path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
 	</svg>
 );
+
+export const BellIcon: React.FC<IconProps> = ({ className = "size-5" }) => (
+	<svg xmlns="http://www.w3.org/2000/svg" fill="none" className={className} viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
+		<path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+	</svg>
+
+)
